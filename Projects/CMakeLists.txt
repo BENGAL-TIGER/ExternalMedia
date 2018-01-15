@@ -99,6 +99,6 @@ INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/Sources/${LIBRARY_HEADER}" DESTINATIO
 #          TEST DEFINITIONS           #
 #######################################
 # Customise this part to use your own CPP files
-add_executable (main ${CMAKE_CURRENT_SOURCE_DIR}/Tests/coolprop_comparisons.cpp ${LIB_SOURCES})
-add_dependencies (main CoolProp)
+#add_executable (main ${CMAKE_CURRENT_SOURCE_DIR}/Tests/coolprop_comparisons.cpp ${LIB_SOURCES})
+#add_dependencies (main CoolProp)
 

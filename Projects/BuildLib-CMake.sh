@@ -15,7 +15,8 @@
 #elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
 #    CMake_generator="MinGW Makefiles"
 #fi
-
+NCPU=`nproc --all`
+CMAKE_SYSTEM_NAME='linux64'
 EXTERNALS="../externals"
 if [ ! -d "$EXTERNALS" ]; then mkdir -p "$EXTERNALS"; fi
 EXTERNALS=`readlink -f "$EXTERNALS"`
@@ -27,7 +28,7 @@ BUILD_DIR=`readlink -f "$BUILD_DIR"`
 
 echo " "
 echo "********* Detecting supported property libraries ***********"
-FLUIDP=1
+FLUIDP=0
 COOLP=1
 echo "FluidProp support set to: $FLUIDP"
 echo  "CoolProp support set to: $COOLP"
@@ -38,19 +39,20 @@ if [ "$COOLP" == "1" ]; then
   if [ -d "$CP_SRC" ]; then
     pushd "$CP_SRC"
     git pull origin master
+    git checkout v6.1.0
     git submodule init
     git submodule update
     # git submodule foreach git pull origin master
     popd 
   else
-    git clone --recursive https://github.com/CoolProp/CoolProp.git "$CP_SRC"
+    git clone -b v6.1.0 --single-branch --recursive https://github.com/CoolProp/CoolProp.git "$CP_SRC"
+#   git clone --recursive https://github.com/CoolProp/CoolProp.git "$CP_SRC"
   fi
 fi
-
 pushd "$BUILD_DIR"
 # cmake .. -G "%CMake_generator%" 
 cmake .. 
-cmake --build . --config Release --target install
+cmake --build . --config Release --target install -- -j$NCPU 
 popd 
 
 exit 0

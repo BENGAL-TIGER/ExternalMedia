@@ -1,0 +1,3 @@
+loadModel(Modelica);getErrorString(); 
+loadFile("package.mo");getErrorString(); 
+simulateModel("ExternalMedia.Test.CoolProp.CO2.TestStatesSupercritical")
