@@ -45,9 +45,9 @@ if [ "$COOLP" == "1" ]; then
     # git submodule foreach git pull origin master
     popd
   else
-    git clone -b goodExternals --single-branch --recursive https://github.com/BENGAL-TIGER/CoolProp.git "$CP_SRC"
-    # git clone -b v6.1.0 --single-branch --recursive https://github.com/CoolProp/CoolProp.git "$CP_SRC"
-#   git clone --recursive https://github.com/CoolProp/CoolProp.git "$CP_SRC"
+    # git clone -b goodExternals --single-branch --recursive https://github.com/BENGAL-TIGER/CoolProp.git "$CP_SRC"
+    # (slamer59) git clone -b v6.1.0 --single-branch --recursive https://github.com/CoolProp/CoolProp.git "$CP_SRC"
+    git clone --recursive https://github.com/CoolProp/CoolProp.git "$CP_SRC"
   fi
 fi
 pushd "$BUILD_DIR"
