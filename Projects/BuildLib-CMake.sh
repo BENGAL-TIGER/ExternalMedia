@@ -46,22 +46,19 @@ if [ "$COOLP" == "1" ]; then
     popd
   else
     git clone --recursive https://github.com/BENGAL-TIGER/CoolPropMDA.git "$CP_SRC"
-    cd CoolPropMDA
-    mkdir -p externals
-    cd externals
-      git submodule add https://github.com/catchorg/Catch2 ./Catch
-      git submodule add https://github.com/eigenteam/eigen-git-mirror.git ./Eigen
-      git submodule add https://github.com/CoolProp/ExcelAddinInstaller.git ./ExcelAddinInstaller
-      git submodule add https://github.com/sakra/FindMathematica ./FindMathematica
-      git submodule add https://github.com/CoolProp/IF97 ./IF97
-      git submodule add https://github.com/CoolProp/REFPROP-headers.git ./REFPROP-headers
-      git submodule add https://github.com/fmtlib/fmt.git ./fmtlib
-      git submodule add https://github.com/msgpack/msgpack-c ./msgpack-c
-      git submodule add https://github.com/pybind/pybind11.git ./pybind11
-      git submodule add https://github.com/Tencent/rapidjson.git ./rapidjson
+      git submodule add https://github.com/catchorg/Catch2 "$CP_SRC/externals/Catch"
+      git submodule add https://github.com/eigenteam/eigen-git-mirror.git "$CP_SRC/externals/Eigen"
+      git submodule add https://github.com/CoolProp/ExcelAddinInstaller.git "$CP_SRC/externals/ExcelAddinInstaller"
+      git submodule add https://github.com/sakra/FindMathematica "$CP_SRC/externals/FindMathematica"
+      git submodule add https://github.com/CoolProp/IF97 "$CP_SRC/externals/IF97"
+      git submodule add https://github.com/CoolProp/REFPROP-headers.git "$CP_SRC/externals/REFPROP-headers"
+      git submodule add https://github.com/fmtlib/fmt.git "$CP_SRC/externals/fmtlib"
+      git submodule add https://github.com/msgpack/msgpack-c "$CP_SRC/externals/msgpack-c"
+      git submodule add https://github.com/pybind/pybind11.git "$CP_SRC/externals/pybind11"
+      git submodule add https://github.com/Tencent/rapidjson.git "$CP_SRC/externals/rapidjson"
     # git pull origin master
-    git submodule init
-    git submodule update
+    # git submodule init
+    # git submodule update
     # {mda) git clone -b goodExternals --single-branch --recursive https://github.com/BENGAL-TIGER/CoolProp.git "$CP_SRC"
     # (slamer59) git clone -b v6.1.0 --single-branch --recursive https://github.com/CoolProp/CoolProp.git "$CP_SRC"
     # git clone --recursive https://github.com/CoolProp/CoolProp.git "$CP_SRC"
