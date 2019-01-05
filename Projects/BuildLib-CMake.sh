@@ -45,7 +45,7 @@ if [ "$COOLP" == "1" ]; then
     # git submodule foreach git pull origin master
     popd
   else
-    git clone --recursive https://github.com/BENGAL-TIGER/CoolProp.mda "$CP_SRC"
+    git clone --recursive https://github.com/BENGAL-TIGER/CoolPropMDA "$CP_SRC"
     # {mda) git clone -b goodExternals --single-branch --recursive https://github.com/BENGAL-TIGER/CoolProp.git "$CP_SRC"
     # (slamer59) git clone -b v6.1.0 --single-branch --recursive https://github.com/CoolProp/CoolProp.git "$CP_SRC"
     # git clone --recursive https://github.com/CoolProp/CoolProp.git "$CP_SRC"
