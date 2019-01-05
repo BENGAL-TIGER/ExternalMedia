@@ -48,8 +48,8 @@ if [ "$COOLP" == "1" ]; then
     git clone --recursive https://github.com/BENGAL-TIGER/CoolPropMDA.git "$CP_SRC"
     # fix-permissions CoolPropMDA
     # git pull origin master
-    # git submodule init
-    # git submodule update
+    git submodule init
+    git submodule update
     # {mda) git clone -b goodExternals --single-branch --recursive https://github.com/BENGAL-TIGER/CoolProp.git "$CP_SRC"
     # (slamer59) git clone -b v6.1.0 --single-branch --recursive https://github.com/CoolProp/CoolProp.git "$CP_SRC"
     # git clone --recursive https://github.com/CoolProp/CoolProp.git "$CP_SRC"
