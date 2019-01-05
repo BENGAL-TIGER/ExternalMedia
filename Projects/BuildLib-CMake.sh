@@ -46,7 +46,19 @@ if [ "$COOLP" == "1" ]; then
     popd
   else
     git clone --recursive https://github.com/BENGAL-TIGER/CoolPropMDA.git "$CP_SRC"
-    # fix-permissions CoolPropMDA
+    cd CoolPropMDA
+    mkdir -p externals
+    cd externals
+      git submodule add https://github.com/catchorg/Catch2 ./Catch
+      git submodule add https://github.com/eigenteam/eigen-git-mirror.git ./Eigen
+      git submodule add https://github.com/CoolProp/ExcelAddinInstaller.git ./ExcelAddinInstaller
+      git submodule add https://github.com/sakra/FindMathematica ./FindMathematica
+      git submodule add https://github.com/CoolProp/IF97 ./IF97
+      git submodule add https://github.com/CoolProp/REFPROP-headers.git ./REFPROP-headers
+      git submodule add https://github.com/fmtlib/fmt.git ./fmtlib
+      git submodule add https://github.com/msgpack/msgpack-c ./msgpack-c
+      git submodule add https://github.com/pybind/pybind11.git ./pybind11
+      git submodule add https://github.com/Tencent/rapidjson.git ./rapidjson
     # git pull origin master
     git submodule init
     git submodule update
