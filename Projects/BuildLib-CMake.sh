@@ -46,10 +46,11 @@ if [ "$COOLP" == "1" ]; then
     popd
   else
     git clone https://github.com/fmtlib/fmt.git
-      cd fmt
+    cd fmt
       cmake CMakeLists.txt
       make
       make install
+    cd ..
     git clone --recursive https://github.com/BENGAL-TIGER/CoolPropMDA.git "$CP_SRC"
       git submodule add https://github.com/catchorg/Catch2 "$CP_SRC/externals/Catch"
       git submodule add https://github.com/eigenteam/eigen-git-mirror.git "$CP_SRC/externals/Eigen"
